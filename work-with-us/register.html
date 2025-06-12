@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - Work with Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2 class="title">Student Registration</h2>
+    <form id="registerForm" enctype="multipart/form-data">
+      <input type="text" id="regFullName" placeholder="Full Name" required><br>
+      <input type="email" id="regEmail" placeholder="Email Address" required><br>
+      <input type="text" id="regPhone" placeholder="Phone Number" required><br>
+      <input type="text" id="regID" placeholder="ID Number" required><br>
+      <input type="text" id="regSchool" placeholder="Name of School" required><br>
+      <input type="text" id="regUsername" placeholder="Username" required><br>
+      <input type="password" id="regPassword" placeholder="Password" required><br>
+      <label for="regProfilePic">Upload Profile Picture:</label><br>
+      <input type="file" id="regProfilePic" accept="image/*" required><br><br>
+      <button type="submit">Register</button>
+    </form>
+    <p><a href="index.html">Already have an account? Login</a></p>
+  </div>
+
+  <button class="toggle-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  <script src="script.js"></script>
+  <script>
+    applyStoredMode();
+  </script>
+</body>
+</html>

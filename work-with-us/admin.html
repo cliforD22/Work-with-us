@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard - Work with Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">Welcome, Admin Tutor</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+    <!-- Button to View/Edit Student Accounts -->
+    <button class="submit-btn" onclick="window.location.href='manage-students.html'">View/Edit Student Accounts</button>
+
+    <!-- Upload Tutorial Section -->
+    <div class="upload-section">
+      <h3>Upload Tutorial</h3>
+      <form id="uploadForm">
+        <select id="uploadSubject" required>
+          <option value="">Select subject</option>
+          <option value="math">Mathematics</option>
+          <option value="science">Science</option>
+          <option value="english">English</option>
+        </select><br>
+        <input type="file" id="tutorialFile" accept=".pdf,.mp4,.jpg,.png"><br>
+        <button type="submit" class="submit-btn">Upload</button>
+      </form>
+    </div>
+
+    <!-- Uploaded Tutorials List -->
+    <div class="uploads-list">
+      <h3>Uploaded Tutorials</h3>
+      <div id="uploadedList"></div>
+    </div>
+
+    <!-- Student Comments -->
+    <div class="comments-section">
+      <h3>Student Comments</h3>
+      <div id="commentsSection"></div>
+    </div>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <button class="toggle-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+
+  <!-- Load JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    applyStoredMode();
+    window.onload = function () {
+      loadUploadedList();
+      loadCommentsForAdmin();
+      loadStudentList();
+    };
+  </script>
+</body>
+</html>

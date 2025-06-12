@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Students - Work with Us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .student-card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+    .student-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .student-card input {
+      margin: 5px 0;
+      padding: 5px;
+      width: 90%;
+    }
+    .student-card button {
+      margin: 5px 5px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">Registered Students</h2>
+    <div id="studentsContainer"></div>
+    <button onclick="window.location.href='admin.html'">Back to Dashboard</button>
+  </div>
+
+  <script>
+    function loadRegisteredStudents() {
+      const container = document.getElementById('studentsContainer');
+      container.innerHTML = '';
+
+      for (let key in localStorage) {
+        if (!localStorage.hasOwnProperty(key)) continue;
+        const student = JSON.parse(localStorage.getItem(key));
+
+        if (
+          student && student.fullName &&
+          student.school && student.email &&
+          student.username && student.password
+        ) {
+          const div = document.createElement('div');
+          div.className = 'student-card';
+
+          div.innerHTML = `
+            ${student.profilePic ? `<img src="${student.profilePic}" alt="Profile">` : ''}
+            <p><strong>Username:</strong> ${student.username}</p>
+            <input type="text" value="${student.fullName}" placeholder="Full Name" id="name-${key}">
+            <input type="text" value="${student.school}" placeholder="School" id="school-${key}">
+            <input type="password" value="${student.password}" placeholder="Password" id="pass-${key}">
+            <br>
+            <button onclick="saveChanges('${key}')">Save Changes</button>
+            <button onclick="deleteStudent('${key}')">Delete Student</button>
+          `;
+
+          container.appendChild(div);
+        }
+      }
+    }
+
+    function saveChanges(username) {
+      const name = document.getElementById(`name-${username}`).value;
+      const school = document.getElementById(`school-${username}`).value;
+      const password = document.getElementById(`pass-${username}`).value;
+
+      const student = JSON.parse(localStorage.getItem(username));
+      if (!student) return;
+
+      student.fullName = name;
+      student.school = school;
+      student.password = password;
+
+      localStorage.setItem(username, JSON.stringify(student));
+      alert('Changes saved for ' + username);
+    }
+
+    function deleteStudent(username) {
+      if (confirm(`Are you sure you want to delete ${username}?`)) {
+        localStorage.removeItem(username);
+        loadRegisteredStudents();
+      }
+    }
+
+    loadRegisteredStudents();
+  </script>
+</body>
+</html>

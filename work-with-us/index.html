@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Work with Us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('work2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 120px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2 class="title">Login to Work with Us</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+    <p><a href="register.html">Register as Student</a></p>
+  </div>
+
+  <button class="toggle-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  <script src="script.js"></script>
+  <script>
+    applyStoredMode();
+  </script>
+</body>
+</html>

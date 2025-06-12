@@ -1,0 +1,218 @@
+/* Global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+/* Login Page */
+.login-container {
+  max-width: 400px;
+  margin: 120px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-container input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-container button:hover {
+  opacity: 0.9;
+}
+
+.login-container a {
+  display: block;
+  margin-top: 15px;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+/* Admin/Student Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: left;
+  margin-top: 60px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.upload-section,
+.uploads-list,
+.comments-section {
+  margin-top: 40px;
+}
+
+/* Welcome section */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#studentDetails {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Forms and Inputs */
+select,
+input[type="file"],
+input[type="text"],
+input[type="password"],
+textarea {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+}
+
+/* Buttons */
+button,
+.submit-btn,
+.logout-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 5px 10px 0;
+}
+
+.logout-btn {
+  float: right;
+  background-color: #ef4444;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Student Subject Buttons */
+#subjectList button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Tutorial View */
+#tutorialContent {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Lists and Comments */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+textarea {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Dark Mode Toggle Button */
+.toggle-mode-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.toggle-mode-btn:hover {
+  background-color: #555;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .container,
+.dark-mode .login-container {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.dark-mode a {
+  color: #90cdf4;
+}
+
+.dark-mode button,
+.dark-mode .submit-btn {
+  background-color: #2563eb;
+}
+
+.dark-mode .logout-btn {
+  background-color: #b91c1c;
+}

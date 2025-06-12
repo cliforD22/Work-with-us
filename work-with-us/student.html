@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard - Work with Us</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #studentProfilePic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .custom-file-input {
+      display: none;
+    }
+
+    .upload-btn-label {
+      background-color: #3b82f6;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    #studentDetails {
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="profile-section">
+      <img id="studentProfilePic" alt="Profile Picture"><br>
+      <h2 id="studentName"></h2>
+
+      <!-- Change Profile Picture -->
+      <label for="updatePic" class="upload-btn-label">Select New Picture</label>
+      <input type="file" id="updatePic" class="custom-file-input" accept="image/*">
+      <button onclick="updateProfilePicture()">Update Picture</button>
+
+      <!-- Student Details -->
+      <p id="studentDetails"></p>
+    </div>
+
+    <!-- Tutorials Section -->
+    <h3>Select a Subject</h3>
+    <button onclick="loadTutorial('math')">Math</button>
+    <button onclick="loadTutorial('science')">Science</button>
+    <button onclick="loadTutorial('english')">English</button>
+    <div id="tutorialContent"></div>
+
+    <!-- Comment Section -->
+    <h3>Leave a Comment</h3>
+    <textarea id="studentComment" placeholder="Write your comment here..."></textarea><br>
+    <button onclick="submitComment()">Submit Comment</button>
+
+    <br><br>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <button class="toggle-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  <script src="script.js"></script>
+  <script>
+    applyStoredMode();
+    loadStudentDetails();
+  </script>
+</body>
+</html>
